@@ -54,7 +54,7 @@
 }
 
     </style>
-  <header id="header">
+  <header id="header" class='header-fixed'>
     <div class="container">
 
       <div id="logos" class="pull-left" style="height:80px; width:200px; margin:-15px; padding:5px;">

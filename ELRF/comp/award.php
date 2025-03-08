@@ -19,6 +19,7 @@ The awards are designed to promote literary excellence on account of William Sha
           </div>
           <div class="row">
           <?php
+
             include('./Admin/conn.php'); // Ensure $conn is properly defined in this file
 
             $sql = "SELECT * FROM `awards`";
@@ -33,7 +34,7 @@ The awards are designed to promote literary excellence on account of William Sha
               <div class="speaker">
                 <img  style="height: 300px; width: 500px;" src="./img/ekl.png"  alt="Speaker 1" class="img-fluid">
                 <div class="details">
-                  <h3><a><?= $row['name'] ?> </a></h3>
+                  <h3><a href="awards.php?id=<?= $row['id']?>"><?= $row['name'] ?> </a></h3>
                   <p><?= $row['name'] ?>                  </p>
                 </div>
               </div>

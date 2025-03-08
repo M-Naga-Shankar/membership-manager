@@ -19,11 +19,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql=mysqli_query($conn,$query);
     if($sql){
         echo "done";
-        header("Location: book.php?id=$id&status=1");
+        header("Location: awards.php?id=$id&status=1");
     }
     else{
         echo "error";
-        header("Location: book.php?id=$id&status=2");
+        header("Location: awards.php?id=$id&status=2");
     }
 
 }

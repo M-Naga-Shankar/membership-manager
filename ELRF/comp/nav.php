@@ -7,8 +7,13 @@
             <li><a class="dropdown-item" href="./annualmem.php">Annual Membership</a></li>
             <li><a class="dropdown-item" href="./lifemem.php">Life Membership</a></li>
       </ul>
+      <li class="dropdown"> <a class="" data-bs-toggle="dropdown" aria-expanded="false" href="./index.php#Award" >Awards</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="./annualmem.php">Awards Categories</a></li>
+            <li><a class="dropdown-item" href="./lifemem.php">Awards Members List</a></li>
+      </ul>
+      
           </li>     
-          <li><a href="./index.php#Award">Awards</a></li>
           <li><a href="./index.php#schedule">Acadamic Events</a></li>
       <!--    <li><a href="#venue">Venue</a></li> -->
           <li><a href="./index.php#books">Books</a></li>
