@@ -265,7 +265,7 @@ include('./comp/nav.php');
                       <th class="text-center text-uppercase text-dark text-xxl font-weight-bolder opacity-7">Editors</th>
                       <th class="text-center text-uppercase text-dark text-xxl font-weight-bolder opacity-7">Star</th>
                       <th class="text-center text-uppercase text-dark text-xxl font-weight-bolder opacity-7">Photo</th>
-                      <th class="text-center text-uppercase text-dark text-xxl font-weight-bolder opacity-7">Edit</th>
+                      <th class="text-center text-uppercase text-dark text-xxl font-weight-bolder opacity-7">Action</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -304,6 +304,11 @@ if (mysqli_num_rows($result) > 0) {
                 <a href="editbook.php?id=<?= $row['id']; ?>">
                     <button class='btn btn-warning m-1'>
                         <i class='material-symbols-rounded opacity-10'>edit</i> Edit
+                    </button>
+                </a>
+                <a href="delete.php?id=<?= $row['id']; ?>&type=3">
+                    <button class='btn btn-danger m-1'>
+                        <i class='material-symbols-rounded opacity-10'>delete</i> Detele
                     </button>
                 </a>
             </span>

@@ -322,7 +322,7 @@ $i=$i+1;
                       <th class="text-center text-uppercase text-dark text-xxl font-weight-bolder opacity-7">Qualification</th>
                       <th class="text-center text-uppercase text-dark text-xxl font-weight-bolder opacity-7">UTR No.</th>
                       <th class="text-center text-uppercase text-dark text-xxl font-weight-bolder opacity-7">Status</th>
-                      <th class="text-center text-uppercase text-dark text-xxl font-weight-bolder opacity-7">Edit</th>
+                      <th class="text-center text-uppercase text-dark text-xxl font-weight-bolder opacity-7">Actions</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -396,6 +396,10 @@ if (mysqli_num_rows($result) > 0) {
                           echo "<a href='editmember.php?id=" . $row['id'] . "&mem=1'>
                                   <button class='btn btn-warning m-1'><i class='material-symbols-rounded opacity-10'>edit</i> Edit</button>
                               </a>";
+
+                              echo "<a href='delete.php?id=" . $row['id'] . "&type=1'>
+                              <button class='btn btn-danger m-1'><i class='material-symbols-rounded opacity-10'>delete</i> Delete</button>
+                          </a>";
                        
                         
                         ?></span>

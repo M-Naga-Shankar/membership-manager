@@ -347,11 +347,11 @@ if (mysqli_num_rows($result) > 0) {
                           </div>
                         </div>
                       </td>
-                      <td>
+                      <td class='text-wrap'>
                       <?= $row['name']; ?>
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <span class="text-xs font-weight-bold"><?= $row['email']; ?> </span>
+                        <span class="text-xs font-weight-bold text-wrap"><?= $row['email']; ?> </span>
                       </td>
                       <td class="align-middle text-center text-sm">
                         <span class="text-xs font-weight-bold"><?= $row['mobile']; ?> </span>
@@ -396,6 +396,10 @@ if (mysqli_num_rows($result) > 0) {
                           echo "<a href='editmember.php?id=" . $row['id'] . "&mem=2'>
                                   <button class='btn btn-warning m-1'><i class='material-symbols-rounded opacity-10'>edit</i> Edit</button>
                               </a>";
+
+                              echo "<a href='delete.php?id=" . $row['id'] . "&type=2'>
+                              <button class='btn btn-danger m-1'><i class='material-symbols-rounded opacity-10'>delete</i> Delete</button>
+                          </a>";
                        
                         
                         ?></span>

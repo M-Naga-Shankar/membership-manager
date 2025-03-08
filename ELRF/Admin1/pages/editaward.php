@@ -129,7 +129,13 @@ if (mysqli_num_rows($result) > 0) {
        
             <div class="row">
                 <button type="submit" class="col-2 mt-4 px-2 btn btn-success">Update</button>
-            </div>
+          
+            <a class="col-4 px-4 mt-4 mx-4" href="delete.php?id=<?= $row['id']; ?>&type=4">
+                    <button class='btn btn-danger' type="button">
+                        <i class='material-symbols-rounded opacity-10'>delete</i> Detele
+                    </button>
+                </a>
+                </div>
         </form>
 <?php
   }}
