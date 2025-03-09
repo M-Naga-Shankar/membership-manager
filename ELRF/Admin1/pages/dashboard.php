@@ -15,7 +15,7 @@
 <?php
 
 include('./comp/head.php');
-
+$active=1;  
 ?>
 <body class="g-sidenav-show  bg-gray-100">
   <?php

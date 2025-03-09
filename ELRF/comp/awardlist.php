@@ -4,7 +4,7 @@
     <section id="speakers" class="wow fadeInUp">
       <div class="container">
         <div class="section-header">
-          <h2>Awards Members List</h2>
+          <h2>Awarded Members Member List</h2>
           <p>Here are of our Life Members</p>
         </div>
         <script>
@@ -45,8 +45,8 @@
       <th scope="col">#</th>
       <th scope="col">Year</th>
       <th scope="col">Name</th>
-      <th scope="col">Life Member ID</th>
-      <th scope="col">Award Type</th>
+      <th scope="col">Member ID</th>
+      <th scope="col">Type</th>
     </tr>
   </thead>
   <tbody>
@@ -57,7 +57,7 @@ if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
 
-$sql = "SELECT * FROM `awardmem`";
+$sql = "SELECT * FROM `awardmem` where status=1";
 //$sql = "SELECT * FROM `annualmembers`";
 $result = mysqli_query($conn, $sql);
 $i=0;
@@ -72,7 +72,6 @@ if (mysqli_num_rows($result) > 0) {
     echo "<td>".$row['name']."</td>";
     echo "<td>".$row['mid']."</td>";
     echo "<td>".$row['type']."</td>";
-    
     echo "</tr>";
     
   }

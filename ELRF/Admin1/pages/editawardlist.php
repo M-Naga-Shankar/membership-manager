@@ -18,7 +18,7 @@ include('./comp/head.php');
 
 error_reporting(E_ALL); // Report all types of errors
 ini_set('display_errors', 1); 
-
+$active=6;
 ?>
 <body class="g-sidenav-show  bg-gray-100">
   <?php
@@ -33,9 +33,9 @@ include('./comp/nav.php');
     <div class="container-fluid py-2">
       <div class="row">
         <div class="ms-3">
-          <h3 class="mb-0 h4 font-weight-bolder">Awarded Members</h3>
+          <h3 class="mb-0 h4 font-weight-bolder">Nomination Members</h3>
           <p class="mb-4">
-            Check the Book.
+            Check the Nomination.
           </p>
         </div>
     <?php
@@ -59,7 +59,7 @@ if (mysqli_num_rows($result1) > 0) {
             <div class="card-header pb-0">
               <div class="row">
                 <div class="col-lg-6 col-7">
-                  <h6>Enter Member Details</h6>
+                  <h6>Edit Member Details</h6>
                 </div>
                 
               

@@ -15,7 +15,7 @@
 <?php
 
 include('./comp/head.php');
-$active=4;
+$active=7;
 ?>
 <body class="g-sidenav-show  bg-gray-100">
   <?php
@@ -87,7 +87,7 @@ if($_GET['status']==2){
 include_once('conn.php');
 
 $id=$_GET['id'];
-$sql = "SELECT * FROM books where id=$id";
+$sql = "SELECT * FROM users";
 
 $result = mysqli_query($conn, $sql);
 $i=1;
@@ -97,7 +97,7 @@ if (mysqli_num_rows($result) > 0) {
 ?>
 
 
-<form method="POST" action="updatebook.php">
+<form method="POST" action="updateuser.php">
 
 <input type="hidden" value="<?= $mem ?>" name="mem" >
             <input type="hidden" name="id" value="<?= $id; ?>"> <!-- Change this dynamically -->
@@ -105,39 +105,19 @@ if (mysqli_num_rows($result) > 0) {
                 <div class="col-md-6">
                 <div class="input-group input-group-static mb-4">
                         <label >Name</label>
-                        <input type="text" name="name" class="form-control  " value="<?= $row['name'] ?>" required>
+                        <input type="text" name="username" class="form-control  " value="<?= $row['username'] ?>" required>
                     </div>
                 </div>
                 <div class="col-md-6">
                      <div class="input-group input-group-static mb-4">
                       <label >Editor</label>
-                        <input type="text" name="ename" class="form-control  " value="<?= $row['editor'] ?>" required>
+                        <input type="text" name="password" class="form-control  " value="" required>
                     </div>
                 </div>
             </div>
       
 
-            <div class="row">
-                <!-- <div class="col-md-6">
-                     <div class="input-group input-group-static mb-4">
-                      <label >Photo</label>
-                        <input type="text" name="utr" class="form-control  " value="<?= $row['photo'] ?>" required>
-                    </div>
-                </div> -->
-                <div class="col-md-6">
-                    <div class="input-group input-group-static mb-4">
-                        <label for="exampleFormControlSelect1" class="ms-0">Stars</label>
-                        <select name="star" class="form-control" id="exampleFormControlSelect1" required>
-                            <option value="5">5</option>
-                            <option value="4">4</option>
-                            <option value="3">3</option>
-                            <option value="2">2</option>
-                            <option value="1">1</option>
-                            
-                        </select>
-                    </div>
-                </div>
-            </div>
+      
             <div class="row">
                 <button type="submit" class="col-2 mt-4 px-2 btn btn-success">Update</button>
             </div>

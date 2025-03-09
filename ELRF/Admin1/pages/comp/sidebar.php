@@ -10,42 +10,42 @@
     <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active bg-gradient-dark text-white" href="../pages/dashboard.php">
+          <a class="nav-link  <?php if($active==1){ echo 'active bg-gradient-dark text-white '; } else{ echo "text-dark"; } ?>" href="../pages/dashboard.php">
             <i class="material-symbols-rounded opacity-5">dashboard</i>
             <span class="nav-link-text ms-1">Dashboard</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-dark" href="../pages/anumem.php">
+          <a class="nav-link  <?php if($active==2){ echo 'active bg-gradient-dark text-white '; } else{ echo "text-dark"; } ?>" href="../pages/anumem.php">
             <i class="material-symbols-rounded opacity-5">group</i>
             <span class="nav-link-text ms-1">Annualmembers</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-dark" href="../pages/lifemem.php">
+          <a class="nav-link  <?php if($active==3){ echo 'active bg-gradient-dark text-white '; } else{ echo "text-dark"; } ?>" href="../pages/lifemem.php">
             <i class="material-symbols-rounded opacity-5">groups</i>
             <span class="nav-link-text ms-1">Lifemembers</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-dark" href="../pages/book.php">
+          <a class="nav-link  <?php if($active==4){ echo 'active bg-gradient-dark text-white '; } else{ echo "text-dark"; } ?>" href="../pages/book.php">
             <i class="material-symbols-rounded opacity-5">book</i>
             <span class="nav-link-text ms-1">Books</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-dark" href="../pages/award.php">
+          <a class="nav-link  <?php if($active==5){ echo 'active bg-gradient-dark text-white '; } else{ echo "text-dark"; } ?>" href="../pages/awards.php">
             <i class="material-symbols-rounded opacity-5">emoji_events</i>
             <span class="nav-link-text ms-1">Awards</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-dark" href="../pages/awardlist.php">
-            <i class="material-symbols-rounded opacity-5">emoji_events</i>
-            <span class="nav-link-text ms-1">Awards Members</span>
+          <a class="nav-link  <?php if($active==6){ echo 'active bg-gradient-dark text-white '; } else{ echo "text-dark"; } ?>" href="../pages/awardlist.php">
+            <i class="material-symbols-rounded opacity-5">editor_choice</i>
+            <span class="nav-link-text ms-1">Nomination</span>
           </a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link text-dark" href="../pages/tables.html">
             <i class="material-symbols-rounded opacity-5">table_view</i>
             <span class="nav-link-text ms-1">Tables</span>
@@ -77,25 +77,25 @@
         </li>
         <li class="nav-item mt-3">
           <h6 class="ps-4 ms-2 text-uppercase text-xs text-dark font-weight-bolder opacity-5">Account pages</h6>
-        </li>
+        </li> -->
         <li class="nav-item">
-          <a class="nav-link text-dark" href="../pages/profile.html">
+          <a class="nav-link  <?php if($active==7){ echo 'active bg-gradient-dark text-white '; } else{ echo "text-dark"; } ?>" href="../pages/profile.php">
             <i class="material-symbols-rounded opacity-5">person</i>
             <span class="nav-link-text ms-1">Profile</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-dark" href="../pages/sign-in.html">
+          <a class="nav-link text-dark" href="../pages/logout.php">
             <i class="material-symbols-rounded opacity-5">login</i>
-            <span class="nav-link-text ms-1">Sign In</span>
+            <span class="nav-link-text ms-1">Logout</span>
           </a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link text-dark" href="../pages/sign-up.html">
             <i class="material-symbols-rounded opacity-5">assignment</i>
             <span class="nav-link-text ms-1">Sign Up</span>
           </a>
-        </li>
+        </li> -->
       </ul>
     </div>
     <div class="sidenav-footer position-absolute w-100 bottom-0 ">

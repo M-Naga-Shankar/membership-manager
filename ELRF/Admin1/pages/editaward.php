@@ -15,7 +15,7 @@
 <?php
 
 include('./comp/head.php');
-
+$active=5;
 ?>
 <body class="g-sidenav-show  bg-gray-100">
   <?php
@@ -32,7 +32,7 @@ include('./comp/nav.php');
         <div class="ms-3">
           <h3 class="mb-0 h4 font-weight-bolder">Edit Award Details</h3>
           <p class="mb-4">
-            Check the Book.
+            Check the Award.
           </p>
         </div>
        

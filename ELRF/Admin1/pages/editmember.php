@@ -15,7 +15,12 @@
 <?php
 
 include('./comp/head.php');
-
+if($_GET['mem']==1){
+$active=2;
+}
+else{
+  $active=3;
+}
 ?>
 <body class="g-sidenav-show  bg-gray-100">
   <?php
@@ -40,7 +45,7 @@ include('./comp/nav.php');
         <div class="col mb-md-0 mb-4">
             <?php
 if($_GET['status']==1){
-
+ 
     ?>
       
   
