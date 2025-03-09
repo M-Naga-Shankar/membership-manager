@@ -9,8 +9,8 @@
       </ul>
       <li class="dropdown"> <a class="" data-bs-toggle="dropdown" aria-expanded="false" href="./index.php#Award" >Awards</a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="./annualmem.php">Awards Categories</a></li>
-            <li><a class="dropdown-item" href="./lifemem.php">Awards Members List</a></li>
+            <li><a class="dropdown-item" href="./awardc.php">Awards Categories</a></li>
+            <li><a class="dropdown-item" href="./awardlist.php">Awards Members List</a></li>
       </ul>
       
           </li>     

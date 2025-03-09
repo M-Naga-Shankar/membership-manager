@@ -34,9 +34,15 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-dark" href="../pages/awards.php">
+          <a class="nav-link text-dark" href="../pages/award.php">
             <i class="material-symbols-rounded opacity-5">emoji_events</i>
             <span class="nav-link-text ms-1">Awards</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="../pages/awardlist.php">
+            <i class="material-symbols-rounded opacity-5">emoji_events</i>
+            <span class="nav-link-text ms-1">Awards Members</span>
           </a>
         </li>
         <li class="nav-item">

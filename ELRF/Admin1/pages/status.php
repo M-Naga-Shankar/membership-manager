@@ -1,9 +1,9 @@
 <?php
-session_start();
-if (!isset($_SESSION['username'])) {
-    header("Location: login.php");
-    exit;
-}
+// session_start();
+// if (!isset($_SESSION['username'])) {
+//     header("Location: login.php");
+//     exit;
+// }
 ?>
 <?php
 include('./conn.php');
@@ -27,7 +27,7 @@ if($mem==1){
         echo "Error updating record: " . $conn->error;
 
     }
-    header("Location:lifelist.php");
+    header("Location:./lifemem.php");
 }
 if($mem==2){
     $sql = "UPDATE `annualmembers` SET `status`=$status WHERE `id`=$id";
@@ -36,7 +36,16 @@ if($mem==2){
     } else {
         echo "Error updating record: " . $conn->error;
     }
-    header("Location:anulist.php");
+    header("Location:./anumem.php");
+}
+if($mem==3){
+    $sql = "UPDATE `awardmem` SET `status`=$status WHERE `id`=$id";
+    if ($conn->query($sql) === TRUE) {
+        echo "Record updated successfully.";
+    } else {
+        echo "Error updating record: " . $conn->error;
+    }
+    header("Location:./awardlist.php");
 }
 
 

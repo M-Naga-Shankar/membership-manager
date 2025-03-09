@@ -16,6 +16,9 @@
 
 include('./comp/head.php');
 
+error_reporting(E_ALL); // Report all types of errors
+ini_set('display_errors', 1); 
+
 ?>
 <body class="g-sidenav-show  bg-gray-100">
   <?php
@@ -30,9 +33,9 @@ include('./comp/nav.php');
     <div class="container-fluid py-2">
       <div class="row">
         <div class="ms-3">
-          <h3 class="mb-0 h4 font-weight-bolder">Life Membership</h3>
+          <h3 class="mb-0 h4 font-weight-bolder">Books</h3>
           <p class="mb-4">
-            Check the Life Membership.
+            Check the Book.
           </p>
         </div>
         <div class="col-xl-4 col-sm-6 mb-xl-0 mb-4">
@@ -40,7 +43,7 @@ include('./comp/nav.php');
             <div class="card-header p-2 ps-3">
               <div class="d-flex justify-content-between">
                 <div>
-                  <p class="text-sm mb-0 text-capitalize">Total life Members</p>
+                  <p class="text-sm mb-0 text-capitalize">Total Annual Members</p>
                   <h4 class="mb-0">$53k</h4>
                 </div>
                 <div class="icon icon-md icon-shape bg-gradient-dark shadow-dark shadow text-center border-radius-lg">
@@ -59,7 +62,7 @@ include('./comp/nav.php');
             <div class="card-header p-2 ps-3">
               <div class="d-flex justify-content-between">
                 <div>
-                  <p class="text-sm mb-0 text-capitalize">Pending life Members</p>
+                  <p class="text-sm mb-0 text-capitalize">Pending Annual Members</p>
                   <h4 class="mb-0">2300</h4>
                 </div>
                 <div class="icon icon-md icon-shape bg-gradient-dark shadow-dark shadow text-center border-radius-lg">
@@ -168,136 +171,89 @@ include('./comp/nav.php');
           </div>
         </div>
       </div> -->
+
       <div class="row  mt-4 mb-4 m-2">
         <div class="col mb-md-0 mb-4">
           <div class="card">
             <div class="card-header pb-0">
               <div class="row">
                 <div class="col-lg-6 col-7">
-                  <h6 >Pending LIfe Member List</h6>
-                  <p class="text-sm mb-0">
-                    <i class="fa fa-check text-info" aria-hidden="true"></i>
-                    <span class="font-weight-bold ms-1">30 done</span> this month
-                  </p>
+                  <h6>Enter Book Details</h6>
                 </div>
                 
               
               </div>
             </div>
-            <div class="card-body px-0 pb-2">
+            <div class="card-body px-5 pb-2 ">
               <div class="table-responsive">
-                <table class="table align-items-center mb-0">
-                  <thead>
-                  <tr>
-                    <th class="text-center text-uppercase text-dark  text-xxl font-weight-bolder opacity-7">#</th>
-                      <th class="text-uppercase text-dark text-xxl font-weight-bolder opacity-7">ID</th>
-                      <th class="text-uppercase text-dark text-xxl font-weight-bolder opacity-7 ps-2">Name</th>
-                      <th class="text-center text-uppercase text-dark text-xxl font-weight-bolder opacity-7">Email</th>
-                      <th class="text-center text-uppercase text-dark text-xxl font-weight-bolder opacity-7">Mobile</th>
-                      <th class="text-center text-uppercase text-dark text-xxl font-weight-bolder opacity-7">Designation</th>
-                      <th class="text-center text-uppercase text-dark text-xxl font-weight-bolder opacity-7">Affiliation</th>
-                      <th class="text-center text-uppercase text-dark text-xxl font-weight-bolder opacity-7">Qualification</th>
-                      <th class="text-center text-uppercase text-dark text-xxl font-weight-bolder opacity-7">UTR No.</th>
-                      <th class="text-center text-uppercase text-dark text-xxl font-weight-bolder opacity-7">Status</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-<?php
+            
+              <form method="POST" action="inawardmem.php" enctype="multipart/form-data">
+
+            <div class="row">
+                <div class="col-md-6">
+                <div class="input-group input-group-static mb-4">
+                        <label >Name</label>
+                        <input type="text" name="name" class="form-control  " required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                     <div class="input-group input-group-static mb-4">
+                      <label >Membership ID</label>
+                        <input type="text" name="mid" class="form-control  " value="" required>
+                    </div>
+                </div>
+            </div>
+      
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="input-group input-group-static mb-4">
+                        <label for="exampleFormControlSelect1" class="ms-0">Award Type</label>
+
+                        <select name="type" class="form-control" id="exampleFormControlSelect1" required>
+                        <?php
 
 include_once('conn.php');
 
-$sql = "SELECT * FROM lifemembers where status=0";
+$sql = "SELECT * FROM awards";
 $result = mysqli_query($conn, $sql);
-$i=1;
+$i = 1;
+
 if (mysqli_num_rows($result) > 0) {
-  // output data of each row
-  while($row = mysqli_fetch_assoc($result)) {
+  // Output data of each row
+  while ($row = mysqli_fetch_assoc($result)) {
 ?>
- <tr>
- <td class="align-middle text-center">
-                     <?= $i; ?>
-                      </td>
-                      <td>
-                        <div class="d-flex px-2 py-1">
-                          <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm"><?= $row['mid']; ?></h6>
-                          </div>
-                        </div>
-                      </td>
-                      <td>
-                      <?= $row['name']; ?>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="text-xs font-weight-bold"><?= $row['email']; ?> </span>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="text-xs font-weight-bold"><?= $row['mobile']; ?> </span>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="text-xs font-weight-bold"><?= $row['designation']; ?> </span>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="text-xs font-weight-bold"><?= $row['affiliation']; ?> </span>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="text-xs font-weight-bold"><?= $row['hq']; ?> </span>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="text-xs font-weight-bold"> <?= $row['utr']; ?></span>
-                      </td>
-                      <td class="align-middle text-center">
-                        <span class="font-weight-bold"> <?php 
-                        
-                        if ($row['status'] == 0) {
-                        
-                          echo "<a href='status.php?id=" . $row['id'] . "&status=1&mem=1'>
-                                  <button class='btn btn-info m-1'>Accept</button>
-                              </a>";
-                          echo "<a href='status.php?id=" . $row['id'] . "&status=2&mem=1'>
-                                  <button class='btn btn-danger m-1'>Reject</button>
-                              </a>";
-                          echo '</td>';
-                      } elseif ($row['status'] == 1) {
-                          echo '<button class="btn btn-success m-1">Accepted</button>';
-                      } elseif ($row['status'] == 2) {
-                          echo '<button class="btn btn-danger m-1">Rejected</button>';
-                      }
-                        
-                        ?></span>
-                      </td>
-                      
-                    </tr>
-                    
+                            <option value="<?= $row['name']; ?>"><?= $row['name']; ?></option>
+                            
 
+                            <?php
 
-<?php
-$i=$i+1;
-  }
-} else {
-  echo "0 results";
-}
+  }}
+?>
+                            
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <button type="submit" class="col-2 mt-4 px-2 btn btn-success">Insert</button>
+            </div>
+        </form>
 
-?> 
-
- 
-                   
-                 
-                  </tbody>
-                </table>
               </div>
             </div>
           </div>
         </div>
 </div>
-
-
+        
+    
         <div class="row  mt-4 mb-4 m-2">
         <div class="col mb-md-0 mb-4">
           <div class="card">
             <div class="card-header pb-0">
               <div class="row">
                 <div class="col-lg-6 col-7">
-                  <h6>Total LIfe Member List</h6>
+                  <h6>Total Annual Member List</h6>
                   <p class="text-sm mb-0">
                     <i class="fa fa-check text-info" aria-hidden="true"></i>
                     <span class="font-weight-bold ms-1">30 done</span> this month
@@ -313,70 +269,54 @@ $i=$i+1;
                   <thead>
                     <tr>
                     <th class="text-center text-uppercase text-dark  text-xxl font-weight-bolder opacity-7">#</th>
-                      <th class="text-uppercase text-dark text-xxl font-weight-bolder opacity-7">ID</th>
+                    
                       <th class="text-uppercase text-dark text-xxl font-weight-bolder opacity-7 ps-2">Name</th>
-                      <th class="text-center text-uppercase text-dark text-xxl font-weight-bolder opacity-7">Email</th>
-                      <th class="text-center text-uppercase text-dark text-xxl font-weight-bolder opacity-7">Mobile</th>
-                      <th class="text-center text-uppercase text-dark text-xxl font-weight-bolder opacity-7">Designation</th>
-                      <th class="text-center text-uppercase text-dark text-xxl font-weight-bolder opacity-7">Affiliation</th>
-                      <th class="text-center text-uppercase text-dark text-xxl font-weight-bolder opacity-7">Qualification</th>
+                      <th class="text-center text-uppercase text-dark text-xxl font-weight-bolder opacity-7">Member ID</th>
+                      <th class="text-center text-uppercase text-dark text-xxl font-weight-bolder opacity-7">Type</th>
                       <th class="text-center text-uppercase text-dark text-xxl font-weight-bolder opacity-7">UTR No.</th>
                       <th class="text-center text-uppercase text-dark text-xxl font-weight-bolder opacity-7">Status</th>
-                      <th class="text-center text-uppercase text-dark text-xxl font-weight-bolder opacity-7">Edit</th>
+                      <th class="text-center text-uppercase text-dark text-xxl font-weight-bolder opacity-7">Actions</th>
                     </tr>
                   </thead>
                   <tbody>
-<?php
+                  <?php
 
+include_once('conn.php');
 
-$sql = "SELECT * FROM lifemembers where status>0";
+$sql = "SELECT * FROM awardmem";
 $result = mysqli_query($conn, $sql);
-$i=1;
+$i = 1;
+
 if (mysqli_num_rows($result) > 0) {
-  // output data of each row
-  while($row = mysqli_fetch_assoc($result)) {
+  // Output data of each row
+  while ($row = mysqli_fetch_assoc($result)) {
 ?>
- <tr>
-                    <td class="align-middle text-center">
-                     <?= $i; ?>
-                      </td>
-                      <td>
-                        <div class="d-flex px-2 py-1">
-                          <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm"><?= $row['mid']; ?></h6>
-                          </div>
-                        </div>
-                      </td>
-                      <td class='text-wrap'>
-                      <?= $row['name']; ?>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="text-xs font-weight-bold text-wrap"><?= $row['email']; ?> </span>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="text-xs font-weight-bold"><?= $row['mobile']; ?> </span>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="text-xs font-weight-bold"><?= $row['designation']; ?> </span>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="text-xs font-weight-bold"><?= $row['affiliation']; ?> </span>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="text-xs font-weight-bold"><?= $row['hq']; ?> </span>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="text-xs font-weight-bold"> <?= $row['utr']; ?></span>
-                      </td>
-                      <td class="align-middle text-center">
+    <tr>
+        <td class="align-middle text-center">
+            <?= $i; ?>
+        </td>
+
+        <td>
+            <?= htmlspecialchars($row['name']); ?>
+        </td>
+        <td class="align-middle text-center text-sm">
+            <span class="text-xs font-weight-bold"><?= htmlspecialchars($row['mid']); ?> </span>
+        </td>
+        <td class="align-middle text-center text-sm">
+            <span class="text-xs font-weight-bold"><?= htmlspecialchars($row['type']); ?> </span>
+        </td>
+        <td class="align-middle text-center text-sm">
+            <span class="text-xs font-weight-bold"><?= $row['utr']; ?> </span>
+        </td>
+        <td class="align-middle text-center">
                         <span class="font-weight-bold"> <?php 
                         
                         if ($row['status'] == 0) {
                         
-                          echo "<a href='status.php?id=" . $row['id'] . "&status=1&mem=1'>
-                                  <button class='btn btn-primary m-1'>Accept</button>
+                          echo "<a href='./status.php?id=" . $row['id'] . "&status=1&mem=3'>
+                                  <button class='btn btn-info m-1'>Accept</button>
                               </a>";
-                          echo "<a href='status.php?id=" . $row['id'] . "&status=2&mem=1'>
+                          echo "<a href='./status.php?id=" . $row['id'] . "&status=2&mem=3'>
                                   <button class='btn btn-danger m-1'>Reject</button>
                               </a>";
                           echo '</td>';
@@ -388,34 +328,31 @@ if (mysqli_num_rows($result) > 0) {
                         
                         ?></span>
                       </td>
-                      <td class="align-middle text-center">
-                        <span class="font-weight-bold"> <?php 
-                        
-                       
-                        
-                          echo "<a href='editmember.php?id=" . $row['id'] . "&mem=2'>
-                                  <button class='btn btn-warning m-1'><i class='material-symbols-rounded opacity-10'>edit</i> Edit</button>
-                              </a>";
+        <td class="align-middle text-center">
+            <span class="font-weight-bold">
+                <a href="editawardlist.php?id=<?= $row['id']; ?>">
+                    <button class='btn btn-warning m-1'>
+                        <i class='material-symbols-rounded opacity-10'>edit</i> Edit
+                    </button>
+                </a>
+                <a href="delete.php?id=<?= $row['id']; ?>&type=5">
+                    <button class='btn btn-danger m-1'>
+                        <i class='material-symbols-rounded opacity-10'>delete</i> Detele
+                    </button>
+                </a>
+            </span>
+        </td>
+    </tr>
 
-                              echo "<a href='delete.php?id=" . $row['id'] . "&type=2'>
-                              <button class='btn btn-danger m-1'><i class='material-symbols-rounded opacity-10'>delete</i> Delete</button>
-                          </a>";
-                       
-                        
-                        ?></span>
-                      </td>
-                      
-                    </tr>
-                      
-                      <?php
-$i=$i+1;
+<?php
+    $i++;
   }
 } else {
-  echo "<td colspan='6' class='px-5 text-dark h6'> No Record Found </td></tr>";
+  echo "<tr><td colspan='6' class='px-5 text-dark h6'> No Record Found </td></tr>";
 }
 
 mysqli_close($conn);
-?> 
+?>
 
  
                    

@@ -374,7 +374,7 @@ if (mysqli_num_rows($result) > 0) {
                         if ($row['status'] == 0) {
                         
                           echo "<a href='status.php?id=" . $row['id'] . "&status=1&mem=1'>
-                                  <button class='btn btn-primary m-1'>Accept</button>
+                                  <button class='btn btn-info m-1'>Accept</button>
                               </a>";
                           echo "<a href='status.php?id=" . $row['id'] . "&status=2&mem=1'>
                                   <button class='btn btn-danger m-1'>Reject</button>

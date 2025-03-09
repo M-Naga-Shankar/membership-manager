@@ -25,6 +25,9 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     if($type==4){
         $query="DELETE FROM `awards` WHERE id='$id'";
     }
+    if($type==5){
+        $query="DELETE FROM `awardmem` WHERE id='$id'";
+    }
     echo $query;
     $sql=mysqli_query($conn,$query);
     if($sql){
@@ -37,6 +40,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         header("Location: book.php?id=$id&status=1");
         if($type==4)
         header("Location: awards.php?id=$id&status=2");
+        if($type==5)
+        header("Location: awardlist.php?id=$id&status=2");
     }
     else{
         echo "error";
