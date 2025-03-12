@@ -12,7 +12,7 @@ include('./comp/header.php');
 
    <?php
 
-include('./comp/awardlist.php');
+include('./comp/yearaward.php');
    ?>
 
    

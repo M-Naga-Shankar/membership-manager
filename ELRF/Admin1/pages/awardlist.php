@@ -105,7 +105,7 @@ include('./comp/nav.php');
             <div class="card-header pb-0">
               <div class="row">
                 <div class="col-lg-6 col-7">
-                  <h6>Enter Nominee Details</h6>
+                  <h6>Enter Awardee Details</h6>
                 </div>
                 
               
@@ -130,9 +130,13 @@ include('./comp/nav.php');
                     </div>
                 </div>
             </div>
+        
+
       
 
             <div class="row">
+      
+            
                 <div class="col-md-6">
                     <div class="input-group input-group-static mb-4">
                         <label for="exampleFormControlSelect1" class="ms-0">Award Type</label>
@@ -160,7 +164,23 @@ if (mysqli_num_rows($result) > 0) {
                             
                         </select>
                     </div>
+                    
                 </div>
+                <div class="col-md-6">
+                     <div class="input-group input-group-static mb-4">
+                      <label >Photo</label>
+                        <input type="file" name="file" class="form-control  " required>
+                    </div>
+                </div>
+</div>
+                <div class="col-md-12">
+                     <div class="input-group input-group-static mb-4">
+                      <label >Details</label>
+                      <textarea style="height:150px;" name="detail" class="form-control"  >
+
+
+  </textarea>
+                    </div>
             </div>
             <div class="row">
                 <button type="submit" class="col-2 mt-4 px-2 btn btn-success">Insert</button>

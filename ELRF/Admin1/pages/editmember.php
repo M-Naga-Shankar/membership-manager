@@ -119,11 +119,12 @@ if (mysqli_num_rows($result) > 0) {
                     </div>
                 </div>
                 <div class="col-md-6">
-                     <div class="input-group input-group-static mb-4">
-                      <label >Email</label>
-                        <input type="email" name="email" class="form-control  " value="<?= $row['email'] ?>" required>
+                <div class="input-group input-group-static mb-4">
+                        <label >Membership ID</label>
+                        <input type="text" name="mid" class="form-control  " value="<?= $row['mid'] ?>" required>
                     </div>
                 </div>
+             
             </div>
             <div class="row">
                 <div class="col-md-6">
@@ -134,10 +135,11 @@ if (mysqli_num_rows($result) > 0) {
                 </div>
                 <div class="col-md-6">
                      <div class="input-group input-group-static mb-4">
-                      <label >Designation</label>
-                        <input type="text" name="designation" class="form-control  " value="<?= $row['designation'] ?>" required>
+                      <label >Email</label>
+                        <input type="email" name="email" class="form-control  " value="<?= $row['email'] ?>" required>
                     </div>
                 </div>
+          
             </div>
             <div class="row">
                 <div class="col-md-6">
@@ -154,10 +156,16 @@ if (mysqli_num_rows($result) > 0) {
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6">
+                <!-- <div class="col-md-6">
                      <div class="input-group input-group-static mb-4">
                       <label >UTR No.</label>
                         <input type="number" name="utr" class="form-control  " value="<?= $row['utr'] ?>" required>
+                    </div>
+                </div> -->
+                <div class="col-md-6">
+                     <div class="input-group input-group-static mb-4">
+                      <label >Designation</label>
+                        <input type="text" name="designation" class="form-control  " value="<?= $row['designation'] ?>" required>
                     </div>
                 </div>
                 <div class="col-md-6">

@@ -1,6 +1,7 @@
 <?php
   //header
 include('./comp/header.php');
+$status="";
   ?>
 
 
@@ -11,8 +12,6 @@ include('./comp/header.php');
     ============================-->
 <?php
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
 
             include('./Admin/conn.php'); // Ensure $conn is properly defined in this file
             $id=$_GET['id'];
@@ -94,8 +93,8 @@ Recipients of the award are entitled to several benefits:<br>
 
 
 <div class="social">
-<button type="button" style="background-color:#f82249; color:white;" class="btn mt-4" data-toggle="modal" data-target="#buy-ticket-modal" data-ticket-type="pro-access">Register Now</button>
-        
+<a href="https://forms.gle/6AkYqswPEVXQ6FL19" style="background-color:#f82249; color:white; width:200px;" class="btn mt-4 rounded font-weight-bold"> Register Now
+</a>     
 </div>
 </div>
 </div>
@@ -105,7 +104,7 @@ Recipients of the award are entitled to several benefits:<br>
 
 
  <!-- Register Modal -->
- <div id="buy-ticket-modal" class="modal fade">
+ <!-- <div id="buy-ticket-modal" class="modal fade">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -133,7 +132,7 @@ Recipients of the award are entitled to several benefits:<br>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
 
     </section>

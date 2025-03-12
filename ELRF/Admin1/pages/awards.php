@@ -16,8 +16,6 @@
 
 include('./comp/head.php');
 $active=5;
-error_reporting(E_ALL); // Report all types of errors
-ini_set('display_errors', 1); 
 
 ?>
 <body class="g-sidenav-show  bg-gray-100">

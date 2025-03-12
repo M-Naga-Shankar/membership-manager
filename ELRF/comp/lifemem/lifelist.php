@@ -55,7 +55,7 @@ if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
 
-$sql = "SELECT * FROM `lifemembers` where status=1";
+$sql = "SELECT * FROM `lifemembers` where status=1 ORDER BY mid";
 //$sql = "SELECT * FROM `annualmembers`";
 $result = mysqli_query($conn, $sql);
 $i=0;

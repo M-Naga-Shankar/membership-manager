@@ -42,7 +42,8 @@
         <li class="nav-item">
           <a class="nav-link  <?php if($active==6){ echo 'active bg-gradient-dark text-white '; } else{ echo "text-dark"; } ?>" href="../pages/awardlist.php">
             <i class="material-symbols-rounded opacity-5">editor_choice</i>
-            <span class="nav-link-text ms-1">Nomination</span>
+            <span class="nav-link-text ms-1">
+            Awardee</span>
           </a>
         </li>
         <!-- <li class="nav-item">

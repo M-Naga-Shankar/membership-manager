@@ -13,13 +13,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $designation = $_POST['designation'];
     $affiliation = $_POST['affiliation'];
     $hq = $_POST['hq'];
-    $utr = $_POST['utr'];
+    $utr = $_POST['mid'];
     $status = $_POST['status'];
     if($mem==1){
-    $sql = "UPDATE annualmembers SET name=?, email=?, mobile=?, designation=?, affiliation=?, hq=?, utr=?, status=? WHERE id=?";
+    $sql = "UPDATE annualmembers SET name=?, email=?, mobile=?, designation=?, affiliation=?, hq=?, mid=?, status=? WHERE id=?";
     }
     if($mem==2){
-        $sql = "UPDATE lifemembers SET name=?, email=?, mobile=?, designation=?, affiliation=?, hq=?, utr=?, status=? WHERE id=?";
+        $sql = "UPDATE lifemembers SET name=?, email=?, mobile=?, designation=?, affiliation=?, hq=?, mid=?, status=? WHERE id=?";
     }
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("ssssssssi", $name, $email, $mobile, $designation, $affiliation, $hq, $utr, $status, $id);

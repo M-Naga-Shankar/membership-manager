@@ -4,7 +4,7 @@
     <section id="speakers" class="wow fadeInUp">
       <div class="container">
         <div class="section-header">
-          <h2>Awarded Members Member List</h2>
+          <h2>Awarded Members List</h2>
           <p>Here are of our Life Members</p>
         </div>
         <script>
@@ -34,8 +34,12 @@
         style="border:1px solid black;"
       }
       </style>
-      
-    <!-- Search Input -->
+      <?php 
+
+      include('./comp/yearaward.php');
+
+      ?>
+          <!-- Search Input -->
     <input type="text" id="searchInput" style="border:1px solid black;" class="form-control mb-3" onkeyup="searchTable()" placeholder="Search for members...">
 
     <!-- Table -->

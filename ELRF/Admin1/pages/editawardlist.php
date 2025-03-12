@@ -16,8 +16,6 @@
 
 include('./comp/head.php');
 
-error_reporting(E_ALL); // Report all types of errors
-ini_set('display_errors', 1); 
 $active=6;
 ?>
 <body class="g-sidenav-show  bg-gray-100">
@@ -86,6 +84,7 @@ if (mysqli_num_rows($result1) > 0) {
                     </div>
                 </div>
             </div>
+       
       
 
             <div class="row">
@@ -117,6 +116,14 @@ if (mysqli_num_rows($result) > 0) {
                         </select>
                     </div>
                 </div>
+                <div class="col-md-12">
+                     <div class="input-group input-group-static mb-4">
+                      <label >Details</label>
+                      <textarea style="height:150px;" name="detail" class="form-control"  ><?= $rows['details']; ?>
+
+
+  </textarea>
+                    </div>
             </div>
             <div class="row">
                 <button type="submit" class="col-2 mt-4 px-2 btn btn-success">Update</button>

@@ -56,7 +56,7 @@ if (!$conn) {
 }
 
 //$sql = "SELECT * FROM `annualmembers`";
-$sql = "SELECT * FROM `annualmembers` where status=1";
+$sql = "SELECT * FROM `annualmembers` WHERE status = 1 ORDER BY mid";
 $result = mysqli_query($conn, $sql);
 $i=0;
 
